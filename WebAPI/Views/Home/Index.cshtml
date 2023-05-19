@@ -1,0 +1,70 @@
+﻿@using System.Data
+@model IEnumerable<JSONObj>
+
+@{
+    ViewData["Title"] = "Fetching Data from WebAPI";
+}
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>@Html.DisplayName("Name")</th>
+            <th>@Html.DisplayName("Username")</th>
+            <th>@Html.DisplayName("Email")</th>
+            <th>@Html.DisplayName("Street")</th>
+            <th>@Html.DisplayName("Suite")</th>
+            <th>@Html.DisplayName("City")</th>
+            <th>@Html.DisplayName("Lat")</th>
+            <th>@Html.DisplayName("Lng")</th>
+            <th>@Html.DisplayName("Phone")</th>
+            <th>@Html.DisplayName("Companyname")</th>
+            <th>@Html.DisplayName("CatchPhrase")</th>
+            <th>@Html.DisplayName("Bs")</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var row in Model)
+        {
+            @if (row.name != null)
+            {
+
+
+                <tr>
+                    <td>@row.name</td>
+                    <td>@row.username</td>
+                    <td>@row.email</td>
+                    <td>@row.address.street</td>
+                    <td>@row.address.suite</td>
+                    <td>@row.address.city</td>
+                    <td>@row.address.geo.lat</td>
+                    <td>@row.address.geo.lng</td>
+                    <td>@row.phone</td>
+                    <td>@row.company.name</td>
+                    <td>@row.company.catchPhrase</td>
+                    <td>@row.company.bs</td>
+                </tr>
+            }
+        }
+    </tbody>
+
+</table>
+
+<form asp-action="SaveTable">
+    <div class="form-group">
+        <input type="submit" value="Save JSON" onclick="myFunction()" class="btn btn-primary" />
+    </div>
+</form>
+
+
+
+
+
+<script>
+    function myFunction() {
+        alert("JSON file saved in project destination folder");
+    }
+</script>
+
+

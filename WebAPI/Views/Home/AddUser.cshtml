@@ -1,0 +1,70 @@
+﻿@model WebAPI.Models.JSONObj
+
+@{
+    ViewData["Title"] = "AddUser";
+}
+
+<h1>Add user</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddUser">
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" required/>
+            </div>
+            <div class="form-group">
+                <label asp-for="username" class="control-label"></label>
+                <input asp-for="username" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="email" class="control-label"></label>
+                <input asp-for="email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="address.street" class="control-label"></label>
+                <input asp-for="address.street" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="address.suite" class="control-label"></label>
+                <input asp-for="address.suite" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="address.city" class="control-label"></label>
+                <input asp-for="address.city" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="address.geo.lat" class="control-label"></label>
+                <input asp-for="address.geo.lat" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="address.geo.lng" class="control-label"></label>
+                <input asp-for="address.geo.lng" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="phone" class="control-label"></label>
+                <input asp-for="phone" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="company.name" class="control-label"></label>
+                <input asp-for="company.name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="company.catchPhrase" class="control-label"></label>
+                <input asp-for="company.catchPhrase" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="company.bs" class="control-label"></label>
+                <input asp-for="company.bs" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to list</a>
+</div>
