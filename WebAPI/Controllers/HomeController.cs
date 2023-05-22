@@ -100,7 +100,7 @@ namespace WebAPI.Controllers
         {
             json = (string)TempData["json"];
             //The stored file destination is inside of the project destionation, that can be also change for example: File.WriteAllText(@"D:\path.json", json);
-            System.IO.File.WriteAllText("JSON.txt", json);
+            System.IO.File.WriteAllText("SavedJSON.json", json);
 
             return RedirectToAction("Index", "Home");
         }
